@@ -1,0 +1,30 @@
+{
+  "name": "mageinsight/logrocket",
+  "description": "Magento 2 LogRocket Integration",
+  "type": "magento2-module",
+  "license": [
+      "OSL-3.0",
+      "AFL-3.0"
+  ],
+  "version": "1.0.0",
+  "require": {
+      "php": "~8.1.0||~8.2.0",
+      "magento/module-catalog": "104.0.*"
+  },
+  "authors": [
+    {
+      "name": "MageInsight",
+      "email": "mageinsight@gmail.com",
+      "homepage": "https://www.mageinsight.com",
+      "role": "Owner"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageInsight\\LogRocket\\": ""
+    }
+  }
+}

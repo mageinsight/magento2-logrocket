@@ -1,0 +1,23 @@
+<?php 
+    $viewModel = $block->getViewModel();
+    if ($viewModel->isEnabled()) {
+        echo $viewModel->getCode();
+    }
+?>
+
+<?php if ($viewModel->isEnabled()) :?>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "MageInsight_LogRocket/js/model/logrocket": {
+                "isCookieRestrictionModeEnabled": <?= (int)$viewModel->isCookieRestrictionModeEnabled() ?>,
+                "currentWebsite": <?= (int)$viewModel->getCurrentWebsiteId() ?>,
+                "cookieName": "<?= /* @noEscape */ \Magento\Cookie\Helper\Cookie::IS_USER_ALLOWED_SAVE_COOKIE ?>",
+                "appId": "<?= /* @noEscape */ $viewModel->getAppId() ?>",
+                "dom": <?= /* @noEscape */ json_encode($viewModel->getDomData()) ?>,
+                "customerId": <?= (int)$viewModel->getCustomerId() ?>
+            }
+        }
+    }
+    </script>
+<?php endif; ?>

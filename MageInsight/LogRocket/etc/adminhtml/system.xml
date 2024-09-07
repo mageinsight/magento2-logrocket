@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="logrocket" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1160" translate="label">
+			<label>LogRocket</label>
+			<tab>general</tab>
+            <resource>MageInsight_LogRocket::config</resource>
+			<group id="general" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General</label>
+				<field id="status" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+                <field id="appId" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>LogRocket AppId</label>
+                    <validate>required</validate>
+                </field>
+                <field id="restriction_classes" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Classes to Sanitize the Data</label>
+                    <validate>required</validate>
+                    <comment><![CDATA[Please enter the comma separated classes for sanitization.]]></comment>
+                </field>
+                <field id="restrict_input_fields" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="40" translate="label" type="select">
+					<label>Restrict Input Fields</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="code" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>LogRocket Initialize Code</label>
+                    <validate>required</validate>
+                    <comment><![CDATA[Please get this code from Project Setup in LogRocket dashboard and remove initialization code. LogRocket will be initiated based on cookie acceptance.]]></comment>
+                </field>
+			</group>
+		</section>
+    </system>
+</config>
